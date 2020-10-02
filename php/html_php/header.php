@@ -1,5 +1,9 @@
 <?php
 require_once("functions.php");
+require_once 'functions/compteur.php';
+require_once 'functions/auth.php';
+ajouter_vue();
+
 
 ?>
 <!doctype html>
@@ -51,12 +55,19 @@ require_once("functions.php");
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
                 <?= nav_menu('nav-link'); ?>
-                
+
             </ul>
-            <form class="form-inline my-2 my-lg-0">
+            <!--<form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
                 <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-            </form>
+            </form>-->
+            <?php if (est_connecte()) : ?>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="logout.php" class="nav-link">Se deconnecter</a>
+                    </li>
+                </ul>
+            <?php endif; ?>
         </div>
     </nav>
 

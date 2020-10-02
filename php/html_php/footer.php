@@ -1,6 +1,12 @@
 <footer>
     <div class="row">
-        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <?php 
+            require_once ('functions/compteur.php');
+            $compteur = afficher_vue();
+            ?>
+            Il y'a <?= $compteur?> visiteur<?php if ($compteur>1):?>s<?php endif;?>  
+        </div>
         <div class="col-md-4"></div>
         <div class="col-md-4 ">
             <h5>Navigation</h5>
